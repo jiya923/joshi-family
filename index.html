@@ -167,17 +167,14 @@ Patan
 <h2>
 🎂 Upcoming Birthdays
 </h2>
+<section class="birthday">
 
-const birthdayList = document.getElementById("birthdayList");
+<h2>🎂 Upcoming Birthdays</h2>
 
-birthdayList.innerHTML = "";
+<div id="birthdayList"></div>
 
-let today = new Date();
+</section>
 
-let nextIndex = -1;
-let minDays = 366;
-
-members.forEach((member,index)=>{
 
 let birthday = new Date(member.birthday);
 
