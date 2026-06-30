@@ -1,133 +1,188 @@
-// ===============================
+// ===========================
 // JOSHI FAMILY TREE
 // script.js
-// ===============================
+// ===========================
 
-// Welcome Message
-window.onload = function () {
+const members = [
 
-    console.log("Joshi Family Tree Loaded Successfully");
+{
+name:"Jagannath",
+relation:"Grand Father",
+birthday:"10 Jan 1955",
+blood:"B+",
+phone:"9876543210",
+village:"Patan",
+image:"images/jagannath.png"
+},
 
-    alert("🙏 Welcome to Joshi Family Tree Website");
+{
+name:"Mayaben",
+relation:"Grand Mother",
+birthday:"15 Aug 1960",
+blood:"O+",
+phone:"9876543211",
+village:"Patan",
+image:"images/mayaben.png"
+},
+
+{
+name:"Hitesh",
+relation:"Father",
+birthday:"18 Oct 1984",
+blood:"A+",
+phone:"9876543212",
+village:"Patan",
+image:"images/hitesh.png"
+},
+
+{
+name:"Rita",
+relation:"Mother",
+birthday:"17 Feb 1990",
+blood:"A+",
+phone:"9876543213",
+village:"Ahmedabad",
+image:"images/rita.png"
+},
+
+{
+name:"Jiya",
+relation:"Daughter",
+birthday:"23 Sep 2007",
+blood:"B+",
+phone:"9876543214",
+village:"Ahmedabad",
+image:"images/jiya.png"
+},
+
+{
+name:"Moxi",
+relation:"Daughter",
+birthday:"02 Aug 2011",
+blood:"O+",
+phone:"9876543215",
+village:"Ahmedabad",
+image:"images/moxi.png"
+},
+
+{
+name:"Rushank",
+relation:"Son",
+birthday:"18 May 2019",
+blood:"A+",
+phone:"9876543216",
+village:"Ahmedabad",
+image:"images/rushank.png"
+}
+
+];
+
+// ===========================
+// SHOW MEMBER
+// ===========================
+
+function showMember(i){
+
+document.getElementById("profileImg").src=members[i].image;
+
+document.getElementById("name").innerHTML=members[i].name;
+
+document.getElementById("relation").innerHTML=members[i].relation;
+
+document.getElementById("birthday").innerHTML=members[i].birthday;
+
+document.getElementById("blood").innerHTML=members[i].blood;
+
+document.getElementById("phone").innerHTML=members[i].phone;
+
+document.getElementById("village").innerHTML=members[i].village;
+
+}
+
+// ===========================
+// SEARCH MEMBER
+// ===========================
+
+document.getElementById("search").addEventListener("keyup",function(){
+
+let value=this.value.toLowerCase();
+
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+let text=card.innerText.toLowerCase();
+
+card.style.display=text.includes(value)?"block":"none";
+
+});
+
+});
+
+// ===========================
+// DARK MODE
+// ===========================
+
+document.getElementById("darkBtn").onclick=function(){
+
+document.body.classList.toggle("dark");
 
 };
 
-// ===============================
-// Explore Button
-// ===============================
+// ===========================
+// FAMILY CHAT
+// ===========================
 
-const exploreBtn = document.querySelector(".hero button");
+function sendMessage(){
 
-if (exploreBtn) {
+let input=document.getElementById("message");
 
-    exploreBtn.addEventListener("click", function () {
+let chat=document.getElementById("chatBox");
 
-        const section = document.querySelector("#family");
+if(input.value=="") return;
 
-        if (section) {
+chat.innerHTML +=
 
-            section.scrollIntoView({
-                behavior: "smooth"
-            });
+"<div class='message'>"+input.value+"</div>";
 
-        } else {
+input.value="";
 
-            alert("Family Section Coming Soon");
-
-        }
-
-    });
+chat.scrollTop=chat.scrollHeight;
 
 }
 
-// ===============================
-// Navigation Smooth Scroll
-// ===============================
+// ===========================
+// UPCOMING BIRTHDAYS
+// ===========================
 
-document.querySelectorAll("nav a").forEach(link => {
+let list="";
 
-    link.addEventListener("click", function (e) {
+members.forEach(member=>{
 
-        const id = this.getAttribute("href");
+list+=`
 
-        if (id.startsWith("#")) {
+<div class="card">
 
-            e.preventDefault();
+<h3>${member.name}</h3>
 
-            const target = document.querySelector(id);
+<p>${member.birthday}</p>
 
-            if (target) {
+</div>
 
-                target.scrollIntoView({
-                    behavior: "smooth"
-                });
-
-            }
-
-        }
-
-    });
+`;
 
 });
 
-// ===============================
-// Member Card Click
-// ===============================
+document.getElementById("birthdayList").innerHTML=list;
 
-const members = document.querySelectorAll(".member-card");
+// ===========================
+// WELCOME
+// ===========================
 
-members.forEach(card => {
+window.onload=function(){
 
-    card.addEventListener("click", function () {
+showMember(0);
 
-        let name = this.dataset.name;
+console.log("Joshi Family Tree Loaded");
 
-        alert("Opening Profile : " + name);
-
-    });
-
-});
-
-// ===============================
-// Birthday Reminder
-// ===============================
-
-const today = new Date();
-
-const month = today.getMonth() + 1;
-
-const day = today.getDate();
-
-if (month === 8 && day === 20) {
-
-    alert("🎂 Happy Birthday Jiya!");
-
-}
-
-// ===============================
-// Dark Mode
-// ===============================
-
-const darkBtn = document.querySelector("#darkMode");
-
-if (darkBtn) {
-
-    darkBtn.onclick = function () {
-
-        document.body.classList.toggle("dark");
-
-    }
-
-}
-
-// ===============================
-// Footer Year
-// ===============================
-
-const year = document.querySelector("#year");
-
-if (year) {
-
-    year.innerHTML = new Date().getFullYear();
-
-}
+};
