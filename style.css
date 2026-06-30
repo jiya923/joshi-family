@@ -1,0 +1,21 @@
+.member{
+    padding:15px;
+    margin:10px;
+    border:1px solid black;
+    width:200px;
+}
+
+.upcoming{
+    border:5px solid lime;
+    box-shadow:0 0 25px lime;
+    animation:glow 1s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        box-shadow:0 0 10px lime;
+    }
+    to{
+        box-shadow:0 0 35px lime;
+    }
+}
