@@ -1,29 +1,133 @@
-const members = [
-    {name:"Jagannath",dob:"1951-03-18"},
-    {name:"Mayaben",dob:"1966-08-15"},
-    {name:"Hitesh",dob:"1984-10-18"},
-    {name:"Rita",dob:"1990-02-17"},
-    {name:"Jiya",dob:"2007-09-23"},
-    {name:"Moxi",dob:"2011-08-02"},
-    {name:"Rushank",dob:"2019-05-18"}
-];
+// ===============================
+// JOSHI FAMILY TREE
+// script.js
+// ===============================
 
-function daysLeft(date){
-    const today = new Date();
+// Welcome Message
+window.onload = function () {
 
-    const bday = new Date(
-        today.getFullYear(),
-        new Date(date).getMonth(),
-        new Date(date).getDate()
-    );
+    console.log("Joshi Family Tree Loaded Successfully");
 
-    if(bday < today){
-        bday.setFullYear(today.getFullYear() + 1);
-    }
+    alert("🙏 Welcome to Joshi Family Tree Website");
 
-    return Math.ceil((bday - today)/(1000*60*60*24));
+};
+
+// ===============================
+// Explore Button
+// ===============================
+
+const exploreBtn = document.querySelector(".hero button");
+
+if (exploreBtn) {
+
+    exploreBtn.addEventListener("click", function () {
+
+        const section = document.querySelector("#family");
+
+        if (section) {
+
+            section.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        } else {
+
+            alert("Family Section Coming Soon");
+
+        }
+
+    });
+
 }
 
-let next = members.sort((a,b)=>daysLeft(a.dob)-daysLeft(b.dob))[0];
+// ===============================
+// Navigation Smooth Scroll
+// ===============================
 
-document.querySelector(`[data-name="${next.name}"]`).classList.add("upcoming");
+document.querySelectorAll("nav a").forEach(link => {
+
+    link.addEventListener("click", function (e) {
+
+        const id = this.getAttribute("href");
+
+        if (id.startsWith("#")) {
+
+            e.preventDefault();
+
+            const target = document.querySelector(id);
+
+            if (target) {
+
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        }
+
+    });
+
+});
+
+// ===============================
+// Member Card Click
+// ===============================
+
+const members = document.querySelectorAll(".member-card");
+
+members.forEach(card => {
+
+    card.addEventListener("click", function () {
+
+        let name = this.dataset.name;
+
+        alert("Opening Profile : " + name);
+
+    });
+
+});
+
+// ===============================
+// Birthday Reminder
+// ===============================
+
+const today = new Date();
+
+const month = today.getMonth() + 1;
+
+const day = today.getDate();
+
+if (month === 8 && day === 20) {
+
+    alert("🎂 Happy Birthday Jiya!");
+
+}
+
+// ===============================
+// Dark Mode
+// ===============================
+
+const darkBtn = document.querySelector("#darkMode");
+
+if (darkBtn) {
+
+    darkBtn.onclick = function () {
+
+        document.body.classList.toggle("dark");
+
+    }
+
+}
+
+// ===============================
+// Footer Year
+// ===============================
+
+const year = document.querySelector("#year");
+
+if (year) {
+
+    year.innerHTML = new Date().getFullYear();
+
+}
