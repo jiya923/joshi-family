@@ -93,7 +93,8 @@ document.getElementById("blood").innerHTML=members[i].blood;
 
 document.getElementById("phone").innerHTML=members[i].phone;
 
-document.getElementById("village").innerHTML=members[i].village;
+document.getElementById("village").innerHTML =
+members[i].village || members[i].city || "";
 
 }
 
@@ -148,22 +149,73 @@ input.value="";
 chat.scrollTop=chat.scrollHeight;
 
 }
-
 // ===========================
 // UPCOMING BIRTHDAYS
 // ===========================
 
-let list="";
+const birthdayList = document.getElementById("birthdayList");
 
-members.forEach(member=>{
+birthdayList.innerHTML = "";
 
-list+=`
+const today = new Date();
 
-<div class="card">
+let nextIndex = -1;
+let minDays = 366;
+
+// Find nearest birthday
+members.forEach((member,index)=>{
+
+let birthday = new Date(member.birthday);
+
+birthday.setFullYear(today.getFullYear());
+
+if(birthday < today){
+
+birthday.setFullYear(today.getFullYear()+1);
+
+}
+
+let days = Math.ceil((birthday - today)/(1000*60*60*24));
+
+if(days < minDays){
+
+minDays = days;
+
+nextIndex = index;
+
+}
+
+});
+
+// Show cards
+
+members.forEach((member,index)=>{
+
+let birthday = new Date(member.birthday);
+
+birthday.setFullYear(today.getFullYear());
+
+if(birthday < today){
+
+birthday.setFullYear(today.getFullYear()+1);
+
+}
+
+let days = Math.ceil((birthday - today)/(1000*60*60*24));
+
+birthdayList.innerHTML += `
+
+<div class="birthdayCard ${index===nextIndex ? "upcoming" : ""}">
+
+<img src="${member.image}" alt="${member.name}">
 
 <h3>${member.name}</h3>
 
+<p>${member.relation}</p>
+
 <p>${member.birthday}</p>
+
+${index===nextIndex ? `<div class="birthdayBadge">🎂 Birthday in ${days} days</div>` : ""}
 
 </div>
 
@@ -171,16 +223,17 @@ list+=`
 
 });
 
-document.getElementById("birthdayList").innerHTML=list;
-
 // ===========================
 // WELCOME
 // ===========================
-
 window.onload=function(){
 
 showMember(0);
 
 console.log("Joshi Family Tree Loaded");
+
+// Birthday cards are already generated above.
+
+};
 
 };
