@@ -388,3 +388,33 @@ transform:translateY(0);
 }
 
 }
+/* Existing CSS */
+
+footer{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+    ...
+}
+
+/* ===== Birthday Card CSS (Paste below this line) ===== */
+
+.birthdayCard{
+    width:220px;
+    background:white;
+    padding:20px;
+    margin:15px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    position:relative;
+    transition:.3s;
+}
+
+/* ... બાકીનો આખો કોડ અહીં ... */
