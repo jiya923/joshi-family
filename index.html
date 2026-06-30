@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Joshi Family Tree</title>
 
 <link rel="stylesheet" href="style.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 
 </head>
 
@@ -16,9 +16,7 @@
 <header>
 
 <div class="logo">
-
 🌳 JOSHI FAMILY TREE
-
 </div>
 
 <nav>
@@ -31,25 +29,180 @@
 
 <a href="#">Gallery</a>
 
-<a href="#">About</a>
+<a href="#">Birthday</a>
 
-<a href="#">Contact</a>
+<input type="text"
+id="search"
+placeholder="Search Member">
+
+<button id="darkBtn">
+🌙
+</button>
 
 </nav>
 
 </header>
 
-
 <section class="hero">
 
 <h1>Our Family, Our Strength ❤️</h1>
 
-<p>Welcome to Joshi Family Tree Website</p>
-
-<button>Explore Family</button>
+<p>
+Welcome to Joshi Family Digital Tree
+</p>
 
 </section>
 
+<div class="container">
+
+<div class="tree">
+
+<div class="parents">
+
+<div class="card" onclick="showMember(0)">
+<img src="images/photo.png">
+<h3>Jagannath</h3>
+<p>Grand Father</p>
+</div>
+
+<div class="heart">
+❤️
+</div>
+
+<div class="card" onclick="showMember(1)">
+<img src="images/mayaben.png">
+<h3>Mayaben</h3>
+<p>Grand Mother</p>
+</div>
+
+</div>
+
+<div class="children">
+
+<div class="card" onclick="showMember(2)">
+<img src="images/hitesh.png">
+<h3>Hitesh</h3>
+<p>Father</p>
+</div>
+
+<div class="card" onclick="showMember(3)">
+<img src="images/rita.png">
+<h3>Rita</h3>
+<p>Mother</p>
+</div>
+
+<div class="card" onclick="showMember(4)">
+<img src="images/jiya.png">
+<h3>Jiya</h3>
+<p>Daughter</p>
+</div>
+
+<div class="card" onclick="showMember(5)">
+<img src="images/moxi.png">
+<h3>Moxi</h3>
+<p>Daughter</p>
+</div>
+
+<div class="card" onclick="showMember(6)">
+<img src="images/rushank.png">
+<h3>Rushank</h3>
+<p>Son</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="profile">
+
+<img id="profileImg"
+src="images/jagannath.png">
+
+<h2 id="name">
+Jagannath
+</h2>
+
+<h4 id="relation">
+Grand Father
+</h4>
+
+<table>
+
+<tr>
+<td>Birthday</td>
+<td id="birthday">
+10-01-1955
+</td>
+</tr>
+
+<tr>
+<td>Blood Group</td>
+<td id="blood">
+B+
+</td>
+</tr>
+
+<tr>
+<td>Phone</td>
+<td id="phone">
+9876543210
+</td>
+</tr>
+
+<tr>
+<td>Village</td>
+<td id="village">
+Patan
+</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<section class="birthday">
+
+<h2>
+🎂 Upcoming Birthdays
+</h2>
+
+<div id="birthdayList">
+
+</div>
+
+</section>
+
+<section class="chat">
+
+<h2>
+💬 Family Chat
+</h2>
+
+<div id="chatBox">
+
+<div class="message">
+Hello Family ❤️
+</div>
+
+</div>
+
+<input
+type="text"
+id="message">
+
+<button onclick="sendMessage()">
+Send
+</button>
+
+</section>
+
+<footer>
+
+© 2026 Joshi Family Tree
+
+</footer>
 
 <script src="script.js"></script>
 
