@@ -9,8 +9,8 @@ const members = [
 name:"Jagannath",
 relation:"Grand Father",
 birthday:"10 Jan 1955",
-blood:"B+",
-phone:"9876543210",
+blood:"nk",
+phone:"9687254584",
 village:"Patan",
 image:"images/jagannath.png"
 },
@@ -19,8 +19,8 @@ image:"images/jagannath.png"
 name:"Mayaben",
 relation:"Grand Mother",
 birthday:"15 Aug 1960",
-blood:"O+",
-phone:"9876543211",
+blood:"nk",
+phone:"6354846815",
 village:"Patan",
 image:"images/mayaben.png"
 },
@@ -30,8 +30,8 @@ name:"Hitesh",
 relation:"Father",
 birthday:"18 Oct 1984",
 blood:"A+",
-phone:"9876543212",
-village:"Patan",
+phone:"9427678251",
+city:"ahmedabad",
 image:"images/hitesh.png"
 },
 
@@ -39,9 +39,9 @@ image:"images/hitesh.png"
 name:"Rita",
 relation:"Mother",
 birthday:"17 Feb 1990",
-blood:"A+",
-phone:"9876543213",
-village:"Ahmedabad",
+blood:"nk",
+phone:"9409465078",
+city:"Ahmedabad",
 image:"images/rita.png"
 },
 
@@ -49,9 +49,9 @@ image:"images/rita.png"
 name:"Jiya",
 relation:"Daughter",
 birthday:"23 Sep 2007",
-blood:"B+",
-phone:"9876543214",
-village:"Ahmedabad",
+blood:"nk",
+phone:"8758605205",
+city:"Ahmedabad",
 image:"images/jiya.png"
 },
 
@@ -59,9 +59,8 @@ image:"images/jiya.png"
 name:"Moxi",
 relation:"Daughter",
 birthday:"02 Aug 2011",
-blood:"O+",
-phone:"9876543215",
-village:"Ahmedabad",
+blood:"nk",
+city:"Ahmedabad",
 image:"images/moxi.png"
 },
 
@@ -69,9 +68,8 @@ image:"images/moxi.png"
 name:"Rushank",
 relation:"Son",
 birthday:"18 May 2019",
-blood:"A+",
-phone:"9876543216",
-village:"Ahmedabad",
+blood:"nk",
+city:"Ahmedabad",
 image:"images/rushank.png"
 }
 
