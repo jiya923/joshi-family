@@ -8,7 +8,7 @@ const members = [
 {
 name:"Jagannath",
 relation:"Grand Father",
-birthday:"10 Jan 1955",
+birthday:"1955-03-18",
 blood:"nk",
 phone:"9687254584",
 village:"Patan",
@@ -18,7 +18,7 @@ image:"images/jagannath.png"
 {
 name:"Mayaben",
 relation:"Grand Mother",
-birthday:"15 Aug 1960",
+birthday:"1969-08-15",
 blood:"nk",
 phone:"6354846815",
 village:"Patan",
@@ -28,7 +28,7 @@ image:"images/mayaben.png"
 {
 name:"Hitesh",
 relation:"Father",
-birthday:"18 Oct 1984",
+birthday:"1984-10-18",
 blood:"A+",
 phone:"9427678251",
 city:"ahmedabad",
@@ -38,7 +38,7 @@ image:"images/hitesh.png"
 {
 name:"Rita",
 relation:"Mother",
-birthday:"17 Feb 1990",
+birthday:"1990-02-17",
 blood:"nk",
 phone:"9409465078",
 city:"Ahmedabad",
@@ -48,7 +48,7 @@ image:"images/rita.png"
 {
 name:"Jiya",
 relation:"Daughter",
-birthday:"23 Sep 2007",
+birthday:"2007-09-23",
 blood:"nk",
 phone:"8758605205",
 city:"Ahmedabad",
@@ -58,7 +58,7 @@ image:"images/jiya.png"
 {
 name:"Moxi",
 relation:"Daughter",
-birthday:"02 Aug 2011",
+birthday:"2011-08-02",
 blood:"nk",
 city:"Ahmedabad",
 image:"images/moxi.png"
@@ -67,7 +67,7 @@ image:"images/moxi.png"
 {
 name:"Rushank",
 relation:"Son",
-birthday:"18 May 2019",
+birthday:"2019-05-18",
 blood:"nk",
 city:"Ahmedabad",
 image:"images/rushank.png"
